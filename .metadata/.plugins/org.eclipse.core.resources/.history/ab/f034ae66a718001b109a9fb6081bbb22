@@ -1,0 +1,12 @@
+package testes;
+
+public class segundo {
+	
+	
+	
+	
+	
+	
+	private static void imprimir(String nome, int idade, float salario) {
+		System.out.printf("%s - %d - %.2f\n", nome, idade, salario);
+	}

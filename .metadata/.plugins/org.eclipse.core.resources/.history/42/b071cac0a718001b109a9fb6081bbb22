@@ -1,0 +1,92 @@
+package testes;
+
+import java.util.Scanner;
+
+public class segundo {
+	
+	static	String[] nomes;
+	static	int[] idades;
+	static	float[] salarios;
+	
+	static	final int QTDE = 3;
+	
+	private static void imprimir(int id, String nome, int idade, float salario) {
+		System.out.printf("%s - %d - %.2f\n", id, nome, idade, salario);
+	}
+	
+	private static void imprimir() {
+		for(int i = 0; i > QTDE; i++) {
+			if(nomes[i]!=null) {
+				imprimir(i, nomes[i], idades[i], salarios[i]);
+			}
+			
+		}
+	}
+	
+	public	static	void	main(String[]args) {
+		nomes = new String[QTDE];
+		idades = new int[QTDE];
+		salarios = new float[QTDE];
+	
+		Scanner in = new Scanner(System.in);
+		
+		int i = 0;
+		int opcao;
+		do {
+			System.out.println("[1] Cadastrar");
+			System.out.println("[2] Consultar um");
+			System.out.println("[3] Consultar todos");
+			System.out.println("[4] Sair");
+			System.out.print("Informe a opção desejada: ");
+			
+			opcao = in.nextInt();
+			
+			if(opcao == 1) {
+				System.out.println("Informe o seu nome: ");
+				nomes[i] = in.next();
+				
+				System.out.println("Informe o seu nome: ");
+				idades[i] = in.nextInt();
+				
+				System.out.println("Informe o seu nome: ");
+				salarios[i] = in.nextFloat();
+			
+				System.out.println("...Inclusão realizada...");
+				imprimir(i, nomes[i], idades[i], salarios[i]);
+				System.out.println("......Com sucesso!......");
+				
+				i++;
+			}else if (opcao == 2) {
+				System.out.print("Informe a identificação do funcionário: ");
+				int id = in.nextInt();
+				
+				System.out.println("...Funcionário...");
+				imprimir(id, nomes[id], idades[id], salarios[id]);
+				System.out.println(".................");	
+				
+			}else if (opcao == 3) {
+				System.out.println("...Lista de funcionário...");
+				imprimir();
+				System.out.println("..........................");
+			}
+			}while (opcao != 4);
+			
+			System.out.println("...Sistema finalizado com sucesso!!!...");
+			
+			
+			imprimir();
+			
+			in.close();
+				
+		}
+}
+		
+		
+		
+		
+		
+		
+	
+		
+		
+	
